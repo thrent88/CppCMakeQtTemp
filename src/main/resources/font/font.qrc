@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/font">
+        <file>HeiTi.ttf</file>
+    </qresource>
+</RCC>
