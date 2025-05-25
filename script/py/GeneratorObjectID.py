@@ -1,3 +1,5 @@
+# 对象ID生成器
+
 import os
 import math
 import argparse
@@ -75,9 +77,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     out_path = args.out
     src_path = args.path  # 获取要解析的文件夹
-
-    print("path: ", src_path)
-    print("out: ", out_path)
 
     createDir(out_path)
 

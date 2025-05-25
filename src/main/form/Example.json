@@ -1,0 +1,81 @@
+{
+  "form": {
+    "title": "用户注册表单",
+    "layout": "vertical",
+    "fields": [
+      {
+        "type": "label",
+        "text": "欢迎注册，请填写以下信息："
+      },
+      {
+        "type": "lineedit",
+        "name": "username",
+        "label": "用户名",
+        "placeholder": "请输入用户名",
+        "required": true,
+        "default": ""
+      },
+      {
+        "type": "lineedit",
+        "name": "email",
+        "label": "邮箱",
+        "placeholder": "example@domain.com",
+        "required": true,
+        "default": ""
+      },
+      {
+        "type": "combobox",
+        "name": "gender",
+        "label": "性别",
+        "options": {
+          "男": "male",
+          "女": "female",
+          "其他": "other"
+        },
+        "default": "male"
+      },
+      {
+        "type": "radiobutton",
+        "name": "account_type",
+        "label": "账户类型",
+        "options": {
+          "普通用户": "normal",
+          "管理员": "admin"
+        },
+        "default": "normal"
+      },
+      {
+        "type": "checkbox",
+        "name": "agree_terms",
+        "label": "我已阅读并同意服务条款",
+        "default": false
+      },
+      {
+        "type": "textarea",
+        "name": "bio",
+        "label": "个人简介",
+        "placeholder": "简单介绍一下你自己",
+        "default": ""
+      },
+      {
+        "type": "spinbox",
+        "name": "age",
+        "label": "年龄",
+        "min": 0,
+        "max": 120,
+        "step": 1,
+        "default": 18
+      },
+      {
+        "type": "double_spinbox",
+        "name": "height",
+        "label": "身高（米）",
+        "min": 1.0,
+        "max": 2.5,
+        "step": 0.01,
+        "decimals": 2,
+        "default": 1.75
+      }
+    ]
+  }
+}

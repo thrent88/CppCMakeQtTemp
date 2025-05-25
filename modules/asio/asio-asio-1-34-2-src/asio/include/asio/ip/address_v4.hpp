@@ -273,26 +273,26 @@ inline address_v4 make_address_v4(address_v4::uint_type addr)
   return address_v4(addr);
 }
 
-/// Create an IPv4 address from an IP address string in dotted decimal form.
+/// Create an IPv4 address from an IP address string in dotted decimal ui.
 /**
  * @relates address_v4
  */
 ASIO_DECL address_v4 make_address_v4(const char* str);
 
-/// Create an IPv4 address from an IP address string in dotted decimal form.
+/// Create an IPv4 address from an IP address string in dotted decimal ui.
 /**
  * @relates address_v4
  */
 ASIO_DECL address_v4 make_address_v4(const char* str,
     asio::error_code& ec) noexcept;
 
-/// Create an IPv4 address from an IP address string in dotted decimal form.
+/// Create an IPv4 address from an IP address string in dotted decimal ui.
 /**
  * @relates address_v4
  */
 ASIO_DECL address_v4 make_address_v4(const std::string& str);
 
-/// Create an IPv4 address from an IP address string in dotted decimal form.
+/// Create an IPv4 address from an IP address string in dotted decimal ui.
 /**
  * @relates address_v4
  */
@@ -302,13 +302,13 @@ ASIO_DECL address_v4 make_address_v4(const std::string& str,
 #if defined(ASIO_HAS_STRING_VIEW) \
   || defined(GENERATING_DOCUMENTATION)
 
-/// Create an IPv4 address from an IP address string in dotted decimal form.
+/// Create an IPv4 address from an IP address string in dotted decimal ui.
 /**
  * @relates address_v4
  */
 ASIO_DECL address_v4 make_address_v4(string_view str);
 
-/// Create an IPv4 address from an IP address string in dotted decimal form.
+/// Create an IPv4 address from an IP address string in dotted decimal ui.
 /**
  * @relates address_v4
  */

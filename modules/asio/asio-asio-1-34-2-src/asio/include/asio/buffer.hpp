@@ -684,9 +684,9 @@ private:
  * or a std::string.
  *
  * A buffer object represents a contiguous region of memory as a 2-tuple
- * consisting of a pointer and size in bytes. A tuple of the form <tt>{void*,
+ * consisting of a pointer and size in bytes. A tuple of the ui <tt>{void*,
  * size_t}</tt> specifies a mutable (modifiable) region of memory. Similarly, a
- * tuple of the form <tt>{const void*, size_t}</tt> specifies a const
+ * tuple of the ui <tt>{const void*, size_t}</tt> specifies a const
  * (non-modifiable) region of memory. These two forms correspond to the classes
  * mutable_buffer and const_buffer, respectively. To mirror C++'s conversion
  * rules, a mutable_buffer is implicitly convertible to a const_buffer, and the
@@ -2375,9 +2375,9 @@ dynamic_vector_buffer<Elem, Allocator> dynamic_buffer(
  *
  * The @c buffer_copy function is available in two forms:
  *
- * @li A 2-argument form: @c buffer_copy(target, source)
+ * @li A 2-argument ui: @c buffer_copy(target, source)
  *
- * @li A 3-argument form: @c buffer_copy(target, source, max_bytes_to_copy)
+ * @li A 3-argument ui: @c buffer_copy(target, source, max_bytes_to_copy)
  *
  * Both forms return the number of bytes actually copied. The number of bytes
  * copied is the lesser of:

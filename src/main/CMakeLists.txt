@@ -8,6 +8,7 @@ configure_file(${PROJECT_SOURCE_DIR}/script/app.rc.in ${RC_FILE} @ONLY)
 file(GLOB_RECURSE SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/*.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
         ${CMAKE_CURRENT_SOURCE_DIR}/*.qrc
 )
@@ -23,16 +24,30 @@ endforeach ()
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
-LIST(APPEND CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/form)
+LIST(APPEND CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
 
 # 用Python生成库
 find_package(Python REQUIRED)
 # 生成对象ID
-execute_process(COMMAND ${Python_EXECUTABLE} ${PROJECT_SOURCE_DIR}/script/py/GeneratorObjectID.py --path ${CMAKE_CURRENT_SOURCE_DIR}/src --out ${CMAKE_BINARY_DIR}/include/app/store)
-# 生成对象ID
+execute_process(COMMAND ${Python_EXECUTABLE}
+        ${PROJECT_SOURCE_DIR}/script/py/GeneratorObjectID.py
+        --path ${CMAKE_CURRENT_SOURCE_DIR}/src
+        --out ${CMAKE_BINARY_DIR}/include/app/store
+)
+
+execute_process(COMMAND ${Python_EXECUTABLE}
+        ${PROJECT_SOURCE_DIR}/script/py/GeneratorForm.py
+        --path ${CMAKE_CURRENT_SOURCE_DIR}/form
+        --out ${CMAKE_BINARY_DIR}/form
+)
 
 # 设置需要链接的库
-set(LINK_LIBS cpptrace::cpptrace asio ${QT_LIBS} spdlog::spdlog)
+set(LINK_LIBS
+        cpptrace::cpptrace
+        asio
+        ${QT_LIBS}
+        spdlog::spdlog
+)
 
 if (${PROJECT_NAME}_WINDOW_EXE)
     add_executable(${BIN_NAME} WIN32 Main.cpp ${SOURCE_FILES} ${RC_FILE})

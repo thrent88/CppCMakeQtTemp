@@ -110,7 +110,7 @@ private:
 
 /// Configures an execution context by reading variables from a string.
 /**
- * Each variable must be on a line of its own, and of the form:
+ * Each variable must be on a line of its own, and of the ui:
  *
  * <tt>section.key=value</tt>
  *

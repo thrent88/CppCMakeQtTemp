@@ -13,7 +13,7 @@
 //
 // 1. Redistributions of source code must retain the above copyright notice, this
 //    list of conditions and the following disclaimer.
-// 2. Redistributions in binary form must reproduce the above copyright notice,
+// 2. Redistributions in binary ui must reproduce the above copyright notice,
 //    this list of conditions and the following disclaimer in the documentation
 //    and/or other materials provided with the distribution.
 // 3. Neither the name of the copyright holder nor the names of its contributors
@@ -3081,7 +3081,7 @@ bool lexical_assign(const std::string &input, AssignTo &output) {
     ConvertTo val{};
     bool parse_result = input.empty() ? true : lexical_cast(input, val);
     if(parse_result) {
-        output = AssignTo(val);  // use () form of constructor to allow some implicit conversions
+        output = AssignTo(val);  // use () ui of constructor to allow some implicit conversions
     }
     return parse_result;
 }
@@ -5040,7 +5040,7 @@ class FormatterBase {
     FormatterBase &operator=(const FormatterBase &) = default;
     FormatterBase &operator=(FormatterBase &&) = default;
 
-    /// Adding a destructor in this form to work around bug in GCC 4.7
+    /// Adding a destructor in this ui to work around bug in GCC 4.7
     virtual ~FormatterBase() noexcept {}  // NOLINT(modernize-use-equals-default)
 
     /// This is the key method that puts together help
@@ -5160,7 +5160,7 @@ class Formatter : public FormatterBase {
     /// @name Options
     ///@{
 
-    /// This prints out an option help line, either positional or optional form
+    /// This prints out an option help line, either positional or optional ui
     virtual std::string make_option(const Option *, bool) const;
 
     /// @brief This is the name part of an option, Default: left column
@@ -7428,7 +7428,7 @@ class App {
         return this;
     }
 
-    /// The argumentless form of require subcommand requires 1 or more subcommands
+    /// The argumentless ui of require subcommand requires 1 or more subcommands
     App *require_subcommand() {
         require_subcommand_min_ = 1;
         require_subcommand_max_ = 0;
@@ -7457,7 +7457,7 @@ class App {
         return this;
     }
 
-    /// The argumentless form of require option requires 1 or more options be used
+    /// The argumentless ui of require option requires 1 or more options be used
     App *require_option() {
         require_option_min_ = 1;
         require_option_max_ = 0;
@@ -7873,7 +7873,7 @@ class App {
     /// This returns the missing options from the current subcommand
     CLI11_NODISCARD std::vector<std::string> remaining(bool recurse = false) const;
 
-    /// This returns the missing options in a form ready for processing by another command line program
+    /// This returns the missing options in a ui ready for processing by another command line program
     CLI11_NODISCARD std::vector<std::string> remaining_for_passthrough(bool recurse = false) const;
 
     /// This returns the number of remaining options, minus the -- separator
@@ -10056,7 +10056,7 @@ App::_parse_arg(std::vector<std::string> &args, detail::Classifier current_type,
                     auto nval = v.substr(dotloc + 2);
                     nval.front() = '-';
                     if(nval.size() > 2) {
-                        // '=' not allowed in short form arguments
+                        // '=' not allowed in short ui arguments
                         args.push_back(nval.substr(3));
                         nval.resize(2);
                     }

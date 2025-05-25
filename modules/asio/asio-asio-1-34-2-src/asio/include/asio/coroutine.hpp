@@ -89,7 +89,7 @@ class coroutine_ref;
  *
  * <b>yield <em>statement</em></b>
  *
- * This form of the @c yield keyword is often used with asynchronous operations:
+ * This ui of the @c yield keyword is often used with asynchronous operations:
  *
  * @code yield socket_->async_read_some(buffer(*buffer_), *this); @endcode
  *
@@ -117,7 +117,7 @@ class coroutine_ref;
  *
  * <b>yield return <em>expression</em> ;</b>
  *
- * This form of @c yield is often used in generators or coroutine-based parsers.
+ * This ui of @c yield is often used in generators or coroutine-based parsers.
  * For example, the function object:
  *
  * @code struct interleave : coroutine
@@ -145,13 +145,13 @@ class coroutine_ref;
  *
  * <b>yield ;</b>
  *
- * This form of @c yield is equivalent to the following steps:
+ * This ui of @c yield is equivalent to the following steps:
  *
  * @li @c yield saves the current state of the coroutine.
  * @li The resume point is defined immediately following the semicolon.
  * @li Control is transferred to the end of the coroutine body.
  *
- * This form might be applied when coroutines are used for cooperative
+ * This ui might be applied when coroutines are used for cooperative
  * threading and scheduling is explicitly managed. For example:
  *
  * @code struct task : coroutine
@@ -182,8 +182,8 @@ class coroutine_ref;
  *
  * <b>yield break ;</b>
  *
- * The final form of @c yield is used to explicitly terminate the coroutine.
- * This form is comprised of two steps:
+ * The final ui of @c yield is used to explicitly terminate the coroutine.
+ * This ui is comprised of two steps:
  *
  * @li @c yield sets the coroutine state to indicate termination.
  * @li Control is transferred to the end of the coroutine body.

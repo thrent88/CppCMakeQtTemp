@@ -155,14 +155,14 @@ private:
   asio::ip::address_v6 ipv6_address_;
 };
 
-/// Create an address from an IPv4 address string in dotted decimal form,
+/// Create an address from an IPv4 address string in dotted decimal ui,
 /// or from an IPv6 address in hexadecimal notation.
 /**
  * @relates address
  */
 ASIO_DECL address make_address(const char* str);
 
-/// Create an address from an IPv4 address string in dotted decimal form,
+/// Create an address from an IPv4 address string in dotted decimal ui,
 /// or from an IPv6 address in hexadecimal notation.
 /**
  * @relates address
@@ -170,14 +170,14 @@ ASIO_DECL address make_address(const char* str);
 ASIO_DECL address make_address(const char* str,
     asio::error_code& ec) noexcept;
 
-/// Create an address from an IPv4 address string in dotted decimal form,
+/// Create an address from an IPv4 address string in dotted decimal ui,
 /// or from an IPv6 address in hexadecimal notation.
 /**
  * @relates address
  */
 ASIO_DECL address make_address(const std::string& str);
 
-/// Create an address from an IPv4 address string in dotted decimal form,
+/// Create an address from an IPv4 address string in dotted decimal ui,
 /// or from an IPv6 address in hexadecimal notation.
 /**
  * @relates address
@@ -188,14 +188,14 @@ ASIO_DECL address make_address(const std::string& str,
 #if defined(ASIO_HAS_STRING_VIEW) \
   || defined(GENERATING_DOCUMENTATION)
 
-/// Create an address from an IPv4 address string in dotted decimal form,
+/// Create an address from an IPv4 address string in dotted decimal ui,
 /// or from an IPv6 address in hexadecimal notation.
 /**
  * @relates address
  */
 ASIO_DECL address make_address(string_view str);
 
-/// Create an address from an IPv4 address string in dotted decimal form,
+/// Create an address from an IPv4 address string in dotted decimal ui,
 /// or from an IPv6 address in hexadecimal notation.
 /**
  * @relates address
