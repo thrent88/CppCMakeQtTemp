@@ -16,4 +16,8 @@ namespace utils {
         std::string str1 = ss.str();
         return str1;
     }
+
+    bool TimeUtils::isBefore(TimePoint t1, TimePoint t2) {
+        return t1 < t2;
+    }
 }

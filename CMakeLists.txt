@@ -35,6 +35,8 @@ FetchContent_MakeAvailable(cpptrace)
 
 include(CTest)
 
+add_subdirectory(modules/asio)
+
 add_subdirectory(src/main)
 if (${PROJECT_NAME}_TEST)
     add_subdirectory(src/test)
