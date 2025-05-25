@@ -25,6 +25,12 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 LIST(APPEND CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/form)
 
+# 用Python生成库
+find_package(Python REQUIRED)
+# 生成对象ID
+execute_process(COMMAND ${Python_EXECUTABLE} ${PROJECT_SOURCE_DIR}/script/py/GeneratorObjectID.py --path ${CMAKE_CURRENT_SOURCE_DIR}/src --out ${CMAKE_BINARY_DIR}/include/app/store)
+# 生成对象ID
+
 # 设置需要链接的库
 set(LINK_LIBS cpptrace::cpptrace asio ${QT_LIBS} spdlog::spdlog)
 
