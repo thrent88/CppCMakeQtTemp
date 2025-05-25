@@ -33,6 +33,12 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(cpptrace)
 
+FetchContent_Declare(
+        spdlog
+        URL ${PROJECT_SOURCE_DIR}/3rd/spdlog-1.15.3.zip
+)
+FetchContent_MakeAvailable(spdlog)
+
 include(CTest)
 
 add_subdirectory(modules/asio)

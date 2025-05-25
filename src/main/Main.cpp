@@ -55,6 +55,8 @@ LONG WINAPI MyUnhandledExceptionFilter(EXCEPTION_POINTERS* pExceptionPointers) {
 #include <QFontDatabase>
 #include "view/MainWindow.h"
 
+#include "utils/CLI11.hpp"
+
 int main(int argc, char **argv) {
 #ifdef _WIN32
     SetUnhandledExceptionFilter(MyUnhandledExceptionFilter);

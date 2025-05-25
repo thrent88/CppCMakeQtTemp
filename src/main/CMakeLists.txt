@@ -14,7 +14,7 @@ file(GLOB_RECURSE SOURCE_FILES
 
 # 导入QT
 set(QT_VERSION 5)
-set(QT_COMPONENTS Core Gui Widgets)
+set(QT_COMPONENTS Core Gui Widgets Xml Svg)
 set(QT_LIBS)
 foreach (QT_COMPONENT ${QT_COMPONENTS})
     find_package(Qt${QT_VERSION} COMPONENTS ${QT_COMPONENT} REQUIRED)
@@ -26,7 +26,7 @@ set(CMAKE_AUTORCC ON)
 LIST(APPEND CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/form)
 
 # 设置需要链接的库
-set(LINK_LIBS cpptrace::cpptrace ${QT_LIBS})
+set(LINK_LIBS cpptrace::cpptrace asio ${QT_LIBS} spdlog::spdlog)
 
 if (${PROJECT_NAME}_WINDOW_EXE)
     add_executable(${BIN_NAME} WIN32 Main.cpp ${SOURCE_FILES} ${RC_FILE})
@@ -51,3 +51,8 @@ if (${PROJECT_NAME}_TEST)
         target_link_options(lib${BIN_NAME} PRIVATE /DEBUG)
     endif ()
 endif ()
+
+# 添加版本打印
+add_executable(${BIN_NAME}_version MainVersion.cpp)
+target_include_directories(${BIN_NAME}_version PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+

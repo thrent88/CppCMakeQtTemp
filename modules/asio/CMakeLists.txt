@@ -13,6 +13,8 @@ endif()
 
 set(ASIO_CMAKE_ASIO_DEP_DIR "${ASIO_CMAKE_ASIO_SOURCE_DIR}/asio-${ASIO_CMAKE_ASIO_TAG}-src")
 
+message(STATUS "asio-cmake source directory: ${ASIO_CMAKE_ASIO_DEP_DIR}")
+
 if(EXISTS "${ASIO_CMAKE_ASIO_DEP_DIR}/asio")
     set(FETCHCONTENT_SOURCE_DIR_ASIO ${ASIO_CMAKE_ASIO_DEP_DIR})
     message(STATUS "asio ${ASIO_CMAKE_ASIO_TAG} source found at ${ASIO_CMAKE_ASIO_DEP_DIR};")
@@ -21,7 +23,7 @@ endif()
 add_library(asio INTERFACE)
 
 target_include_directories(asio
-        INTERFACE ${asio_SOURCE_DIR}/asio/include
+        INTERFACE ${ASIO_CMAKE_ASIO_DEP_DIR}/asio/include
 )
 
 target_compile_definitions(asio
