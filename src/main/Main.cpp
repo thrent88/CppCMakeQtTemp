@@ -54,6 +54,7 @@ LONG WINAPI MyUnhandledExceptionFilter(EXCEPTION_POINTERS* pExceptionPointers) {
 #include <QFontDatabase>
 #include "view/MainWindow.h"
 
+#include "utils/ex/StackBack.h"
 #include "utils/CLI11.hpp"
 
 int main(int argc, char **argv) {
@@ -71,6 +72,13 @@ int main(int argc, char **argv) {
 
     MainWindow w;
     w.show();
+
+    CPPTRACE_TRY {
+        THROW_EXCEPTION("An error occurred in the main function.");
+    } CPPTRACE_CATCH (std::exception &e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << StringStackBack() << std::endl;
+    }
 
     return app.exec();
 }
