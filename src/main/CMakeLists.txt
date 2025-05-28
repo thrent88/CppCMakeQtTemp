@@ -35,12 +35,6 @@ execute_process(COMMAND ${Python_EXECUTABLE}
         --out ${CMAKE_BINARY_DIR}/include/app/store
 )
 
-execute_process(COMMAND ${Python_EXECUTABLE}
-        ${PROJECT_SOURCE_DIR}/script/py/GeneratorForm.py
-        --path ${CMAKE_CURRENT_SOURCE_DIR}/form
-        --out ${CMAKE_BINARY_DIR}/form
-)
-
 # 设置需要链接的库
 set(LINK_LIBS
         cpptrace::cpptrace

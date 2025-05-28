@@ -6,7 +6,6 @@
 
 #include <windows.h>
 #include <dbghelp.h>
-#include <filesystem>
 #include <tchar.h>
 #include <iostream>
 
